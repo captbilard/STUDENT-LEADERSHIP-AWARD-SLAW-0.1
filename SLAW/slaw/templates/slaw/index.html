@@ -1,0 +1,11 @@
+{% if nominee_list %}
+    <ul>
+        {% for nominee in nominee_list %}
+            <h3>{{nominee.Award_Category}}</h3>
+            <li>{{nominee.Full_Name}}</li>
+        {% endfor %}
+        
+    </ul>
+    {% else %}
+        <p>No one has been nominated</p>
+{% endif %}

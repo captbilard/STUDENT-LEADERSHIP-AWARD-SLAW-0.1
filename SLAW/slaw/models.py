@@ -2,20 +2,33 @@ from django.db import models
 
 # Create your models here.
 class awardCategories(models.Model):
+    Campus_life_and_leadership_award = 'CLLA'
+    Most_outstanding_student_union_leader_award = 'MOSULA'
+    University_outstanding_new_leader_award = 'UONLA'
+    Most_outstanding_ngo_leadership_award = 'MONLA'
+    The_alumni_association_award = 'AAA'
+    Next_rated_award = 'NRA'
+    Unsung_hero_award = 'UHA'
+    Bridge_builder_award = 'BBA'
+    Vice_chancellor_volunteer_service_award = 'VCVSA'
+    Humanitarian_award = 'HA'
+    Award_of_literary_excellence = 'ALE'
+    Student_media_personality_award = 'SMPA'
+    Entrepreneurial_merit_award = 'EMA'
     Award_Category_Choices = [
-        ('CLLA', 'Campus Life and Leadership Award'),
-        ('MOSULA', 'Most Outstanding Student Union Leader Award'),
-        ('UONLA', 'University Outstanding New Leader Award'),
-        ('MONLA', 'Most Outstanding NGO Leadership Award'),
-        ('AAA', 'The Alumni Association Award'),
-        ('NRA', 'Next Rated Award'),
-        ('UHA', 'Unsung Hero Award'),
-        ('BBA', 'Bridge Builder Award'),
-        ('VCVSA', 'Vice Chancellor’s Volunteer Service Award'),
-        ('HA', 'Humanitarian Award'),
-        ('ALE', 'Award of Literary Excellence'),
-        ('SMPA', 'Student Media Personality Award'),
-        ('EMA', 'Entrepreneurial Merit Award')
+        (Campus_life_and_leadership_award, 'Campus Life and Leadership Award'),
+        (Most_outstanding_student_union_leader_award, 'Most Outstanding Student Union Leader Award'),
+        (University_outstanding_new_leader_award, 'University Outstanding New Leader Award'),
+        (Most_outstanding_ngo_leadership_award, 'Most Outstanding NGO Leadership Award'),
+        (The_alumni_association_award, 'The Alumni Association Award'),
+        (Next_rated_award, 'Next Rated Award'),
+        (Unsung_hero_award, 'Unsung Hero Award'),
+        (Bridge_builder_award, 'Bridge Builder Award'),
+        (Vice_chancellor_volunteer_service_award, 'Vice Chancellor’s Volunteer Service Award'),
+        (Humanitarian_award, 'Humanitarian Award'),
+        (Award_of_literary_excellence, 'Award of Literary Excellence'),
+        (Student_media_personality_award, 'Student Media Personality Award'),
+        (Entrepreneurial_merit_award, 'Entrepreneurial Merit Award')
 
     ]
 
@@ -30,13 +43,13 @@ class awardCategories(models.Model):
 
 class Nominees(models.Model):
     year_in_school = [
-        ('100L', '100'),
-        ('200L', '200'),
-        ('300L', '300'),
-        ('400L', '400'),
-        ('500L', '500'),
-        ('600L', '600'),
-        ('700L', '700')
+        (100, '100'),
+        (200, '200'),
+        (300, '300'),
+        (400, '400'),
+        (500, '500'),
+        (600, '600'),
+        (700, '700')
     ]
     Award_Category = models.ForeignKey(awardCategories, on_delete=models.CASCADE)
     Full_Name = models.CharField(max_length=100)
