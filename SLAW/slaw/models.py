@@ -33,12 +33,14 @@ class awardCategories(models.Model):
     ]
 
     Category_of_award = models.CharField(max_length=10, choices=Award_Category_Choices)
+    award_details = models.TextField(default="Details about the award")
 
     class Meta:
         verbose_name_plural = "award Categories"
 
     def __str__(self):
-        return f'{self.Category_of_award}'
+        # readeable_name = self.get
+        return f'{self.get_Category_of_award_display()}'
     
 
 class Nominees(models.Model):

@@ -1,11 +1,12 @@
-{% if nominee_list %}
-    <ul>
-        {% for nominee in nominee_list %}
-            <h3>{{nominee.Award_Category}}</h3>
-            <li>{{nominee.Full_Name}}</li>
-        {% endfor %}
-        
-    </ul>
-    {% else %}
-        <p>No one has been nominated</p>
-{% endif %}
+<article>
+    <h2>Welcome to SLAW 0.1</h2>
+
+</article>
+
+<article>
+    <h3>Award Categories</h3>
+    {% for category in categories %}
+        <h4>{{category.get_Category_of_award_display}}</h4>
+        <p>{{category.award_details}}</p>
+    {% endfor %}
+</article>
