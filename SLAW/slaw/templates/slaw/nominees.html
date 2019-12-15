@@ -1,5 +1,8 @@
 <!-- A page to show the various nominees under their categories -->
+{% extends "slaw/base.html" %}
+{% block title %}Award Nominees{% endblock %}
 
+{% block content %}
 {% if nominee_list %}
     <ul>
         {% for nominee in nominee_list %}
@@ -11,3 +14,5 @@
     {% else %}
         <p>No one has been nominated</p>
 {% endif %}
+
+{% endblock %}
