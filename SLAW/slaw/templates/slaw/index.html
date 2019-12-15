@@ -1,12 +1,18 @@
-<article>
-    <h2>Welcome to SLAW 0.1</h2>
+{% extends "slaw/base.html" %}
+{% block title %}SLAW{% endblock %}
 
-</article>
+{% block content %}
+    <article>
+        <h2>Welcome to SLAW 0.1</h2>
 
-<article>
-    <h3>Award Categories</h3>
-    {% for category in categories %}
-        <h4>{{category.get_Category_of_award_display}}</h4>
-        <p>{{category.award_details}}</p>
-    {% endfor %}
-</article>
+    </article>
+
+    <article>
+        <h3>Award Categories</h3>
+        {% for category in categories %}
+            <h4>{{category.get_Category_of_award_display}}</h4>
+            <p>{{category.award_details}}</p>
+        {% endfor %}
+    </article>
+
+{% endblock %}

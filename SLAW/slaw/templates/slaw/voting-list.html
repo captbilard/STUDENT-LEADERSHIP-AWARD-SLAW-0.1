@@ -1,0 +1,28 @@
+{% extends "slaw/base.html" %}
+{% block title %}{{category.get_Category_of_award_display}}{% endblock %}
+
+{% block content %}
+<div>
+    <h3>{{category.get_Category_of_award_display}}</h3>
+        <div class="boxesContainer">
+            {% for nominee in category.nominees_set.all %}
+                <div class="cardBox">
+                    <div class="card">
+                        <div class="front">
+                            <h3>{{nominee.Full_Name}}</h3>
+                            <p>{{nominee.Institution}}</p>
+                        </div>
+                        <div class="back">
+                            <h3>{{nominee.Full_Name}}</h3>
+                            <p>{{nominee.Institution}}</p>
+                            <a href="{% url 'vote' nominee.id %}">Vote</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        
+    
+</div>
+
+{% endblock %}
