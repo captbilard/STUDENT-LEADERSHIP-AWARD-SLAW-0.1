@@ -2,10 +2,53 @@
 {% block title %}Voting Category{% endblock %}
 
 {% block content %}
-    {% for category in categories %}
-    <ul>
-        <li><a href="{% url 'voting-list' category.id %}">{{category.get_Category_of_award_display}}</a></li>
-    </ul>
-    {% endfor %}
+
+    <!-- Page Header -->
+        <div id="page-wrapper" class="section">
+                <!-- container -->
+                <div class="container">
+                    <!-- row -->
+                    <div class="row">
+                        <!-- wrapper content -->
+                        <div class="col-md-12">
+                            <div class="page-wrapper-content">
+                                <h1>Select the category you want to vote for.</h1>
+                            </div>
+                        </div>
+                        <!-- /wrapper content -->
+                    </div>
+                    <!-- /row -->
+                </div>
+                <!-- /container -->
+        </div>
+    <!-- /Page Header -->
+
+    <!-- CTA -->
+	<div id="cta" class="section">
+            <!-- background image -->
+            <div class="section-bg" style="background-image:url(slaw/img/background03.jpg)" data-stellar-background-ratio="0.5"></div>
+            <!-- /background image -->
+    
+            <!-- container -->
+            <div class="container">
+                <!-- container -->
+                <div class="row">
+                    <!-- cta content -->
+                    <div class="col-md-8 col-md-offset-2">
+                        <div class="cta-content text-center">
+                            {% for category in categories %}
+                            <ul>
+                                <li><a href="{% url 'voting-list' category.id %}"><span style="text-align: left;">{{category.get_Category_of_award_display}}</span></a></li>
+                            </ul>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <!-- /cta content -->
+                </div>
+                <!-- /row -->
+            </div>
+            <!-- /container -->
+        </div>
+        <!-- /CTA -->
 
 {% endblock %}

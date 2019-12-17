@@ -1,9 +1,10 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse, HttpResponseRedirect
 from django.views import generic
 from .models import Nominees, Votes, awardCategories
 from django.urls import reverse
-import datetime
+from .forms import NominateForm
+from rest_framework.decorators import api_view
 
 
 categories = awardCategories.objects.all()
@@ -47,5 +48,25 @@ def vote(request, nominee_id):
     
 
 
- 
+def Nominate(request):
+    if request.method == 'POST':
+        nominate_form = NominateForm(request.POST)
+        if nominate_form.is_valid():
+            nominate_form.save()
+        newNomineeId = Nominees.objects.count()
+        try:
+            newNominee = Nominees.objects.get(pk=newNomineeId)
+        except (KeyError, Nominees.DoesNotExist):
+            pass
+        else:
+            votesCreation = Votes(nominees=newNominee)
+            votesCreation.save()
+        return redirect('/')
+    else:
+        nominate_form = NominateForm()
+        return render(request, 'slaw/nominate.html', {'form':nominate_form})
+
+    
+
+
 

@@ -3,16 +3,45 @@
 {% block title %}Award Nominees{% endblock %}
 
 {% block content %}
-{% if nominee_list %}
-    <ul>
-        {% for nominee in nominee_list %}
-            <h3>{{nominee.Award_Category.get_Category_of_award_display}}</h3>
-            <li>{{nominee.Full_Name}}</li>
-        {% endfor %}
-        
-    </ul>
-    {% else %}
-        <p>No one has been nominated</p>
-{% endif %}
+
+<!-- Page Header -->
+    <div id="page-wrapper" class="section">
+        <!-- container -->
+        <div class="container">
+            <!-- row -->
+            <div class="row">
+                <!-- wrapper content -->
+                <div class="col-md-12">
+                    <div class="page-wrapper-content">
+                        <h1>Award Nominees</h1>
+                    </div>
+                </div>
+                <!-- /wrapper content -->
+            </div>
+            <!-- /row -->
+        </div>
+        <!-- /container -->
+    </div>
+<!-- /Page Header -->
+
+<div class="section">
+    <div class="container">
+        <div class="row">
+            {% if nominee_list %}
+                <ul>
+                    {% for nominee in nominee_list %}
+                        <h3>{{nominee.Award_Category.get_Category_of_award_display}}</h3>
+                        <li>{{nominee.Full_Name}}</li>
+                    {% endfor %}
+                    
+                </ul>
+                {% else %}
+                    <p>No one has been nominated</p>
+            {% endif %}
+
+        </div>
+    </div>
+
+</div>
 
 {% endblock %}

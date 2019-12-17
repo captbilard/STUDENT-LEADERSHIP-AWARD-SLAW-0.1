@@ -1,0 +1,45 @@
+{% extends "slaw/base.html" %}
+{% block title %}Slaw Nomination{% endblock %}
+
+{% block content %}
+    <!-- Page Header -->
+        <div id="page-wrapper" class="section">
+            <!-- container -->
+            <div class="container">
+                <!-- row -->
+                <div class="row">
+                    <!-- wrapper content -->
+                    <div class="col-md-12">
+                        <div class="page-wrapper-content">
+                            <h3>Do you know any exceptional student that deserves to be awarded, fill the form below to nominate such student</h3>
+                        </div>
+                    </div>
+                    <!-- /wrapper content -->
+                </div>
+                <!-- /row -->
+            </div>
+            <!-- /container -->
+        </div>
+    <!-- /Page Header -->
+
+    <div class="section">
+        <div class="container">
+            <div class="row">
+                <form action="{% url 'nominate' %}" method="post">
+                    {% csrf_token %}
+                    {% for field in form %}
+                        <label for="{{field.id_for_label}}" class="col-xs-3 control-label">{{field.label}}</label>
+                        <div class="col-xs-9">
+                            {{field}}
+                        </div>
+                    {% endfor %}
+                    <div class="form-group">
+                        <div class="col-xs-offset-3 col-xs-9">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
