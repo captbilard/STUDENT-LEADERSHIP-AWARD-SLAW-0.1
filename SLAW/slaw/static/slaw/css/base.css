@@ -56,20 +56,13 @@ body {
 
 /* voting-list */
 
-body {
-  color: #666;
-  font-weight: normal;
-  margin: 0;
-  padding: 0;
-  background: #eeeeee;
-  }
-  h2 {
-  background: #666;
-  color: #fff;
-  text-align: center;
-  margin: 0 0 5% 0;
-  padding: 0.5em;
-  }
+.main-voting-list-div{
+  width: 100%;
+  height: 100px;
+  margin-top: 20px;
+  margin-left: 2em;
+  
+}
   .cardBox {
   float: left;
   font-size: 1.2em;
@@ -82,7 +75,7 @@ body {
   transform: rotateY(180deg);
   }
   .card {
-  background: #666666;
+  background: #8c7b75;
   cursor: pointer;
   height: 250px;
   transform-style: preserve-3d;
@@ -121,7 +114,7 @@ body {
   background: #333;
   color: #fff;
   text-decoration: none;
-  border-radius: 2px;
+  border-radius: 5px;
   font-size: 0.9em;
   transition: all 0.2s ease 0s;
   }
@@ -131,16 +124,16 @@ body {
   text-shadow: 0 0 1px #333;
   }
   .cardBox:nth-child(1) .card .back {
-  background: #ffcc00;
+  background: #DEB887;
   }
   .cardBox:nth-child(2) .card .back {
-  background: #1c87c9;
+  background: #DEB887;
   }
   .cardBox:nth-child(3) .card .back {
-  background: #ff6347;
+  background: #DEB887;
   }
   .cardBox:nth-child(4) .card .back {
-  background: #8ebf42;
+  background: #DEB887;
   }
   .cardBox:nth-child(2) .card {
   -webkit-animation: giro 1.5s 1;

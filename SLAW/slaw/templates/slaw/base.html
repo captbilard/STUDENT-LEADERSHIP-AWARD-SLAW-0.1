@@ -2,26 +2,195 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="{% static 'slaw/base.css' %}">
-    <link rel="stylesheet" href="{ % static 'slaw/voting-list.css' %}">
-    <script type="text/javascript" src="{% static 'slaw/base.js' %}"></script>
-    <title>{% block title %}{% endblock %}</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
+	<title>{% block title %}{% endblock %}</title>
+
+	<!-- Google font -->
+	<link href="https://fonts.googleapis.com/css?family=Poppins:400,700,900" rel="stylesheet">
+
+	<!-- Bootstrap -->
+	<link type="text/css" rel="stylesheet" href="{% static 'slaw/css/bootstrap.min.css' %}" />
+
+	<!-- Owl Carousel -->
+	<link type="text/css" rel="stylesheet" href="{% static 'slaw/css/owl.carousel.css' %}" />
+	<link type="text/css" rel="stylesheet" href="{% static 'slaw/css/owl.theme.default.css' %}" />
+
+	<!-- Font Awesome Icon -->
+	<link rel="stylesheet" href="{% static 'slaw/css/font-awesome.min.css' %}">
+
+	<!-- Custom stlylesheet -->
+	<link type="text/css" rel="stylesheet" href="{% static 'slaw/css/style.css' %}" />
+
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+			  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+			  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+			<![endif]-->
 </head>
+
 <body>
-    <div class="topnav" id="myTopnav">
-        <a href="{% url 'index' %}" class="active">Home</a>
-        <a href="{% url 'nominees' %}">Award Nominees</a>
-        <a href="{% url 'voting-category' %}">Vote</a>
-        <a href="https://change360network.com/">Change360Network</a>
-        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-            <i class="fa fa-bars"></i>
-        </a>
-    </div>
-    {% block content %}{% endblock %}
+
+	<!-- Header -->
+	<header id="header">
+		<!-- container -->
+		<div class="container">
+			<!-- navbar header -->
+			<div class="navbar-header">
+				<!-- Logo -->
+				<div class="navbar-brand">
+					<a class="logo" href="https://change360network.com/">
+						<!-- <img class="logo-img" src="./img/logo.png" alt="logo">
+						<img class="logo-alt-img" src="./img/logo-alt.png" alt="logo"> -->
+						Change360Network
+					</a>
+				</div>
+				<!-- /Logo -->
+
+				<!-- Mobile toggle -->
+				<button class="navbar-toggle">
+						<i class="fa fa-bars"></i>
+					</button>
+				<!-- /Mobile toggle -->
+			</div>
+			<!-- /navbar header -->
+
+			<!-- Navigation -->
+			<nav id="nav">
+				<ul class="main-nav nav navbar-nav navbar-right">
+					<li><a href="{% url 'index' %}">Home</a></li>
+					<li><a href="{% url 'nominees' %}">Award Nominees</a></li>
+					<li><a href="{% url 'voting-category' %}">Vote</a></li>
+					<li><a href="{% url 'nominate' %}">Nominate</a></li>
+				</ul>
+			</nav>
+			<!-- /Navigation -->
+
+		</div>
+		<!-- /container -->
+	</header>
+	<!-- /Header -->
+
+	
+
+	<!-- <div class="section">
+		<div class="container">
+			<div class="row">
+
+			</div>
+		</div>
+	</div> -->
+
+	{% block content %}{% endblock %}
+
+	<!-- Contact -->
+	<div id="contact" class="section">
+		<!-- container -->
+		<div class="container">
+			<!-- row -->
+			<div class="row">
+				<!-- section title -->
+				<div class="section-title">
+					<h3 class="title"><span>Contact</span> <span style="color: #dd0a37;">Info</span></h3>
+				</div>
+				<!-- /section title -->
+
+				<!-- contact -->
+				<div class="col-sm-4">
+					<div class="contact">
+						<h3>Address</h3>
+						<p>2635 Simons Hollow Road, NEW YORK</p>
+					</div>
+				</div>
+				<!-- /contact -->
+
+				<!-- contact -->
+				<div class="col-sm-4">
+					<div class="contact">
+						<h3>Phone</h3>
+						<p>570-751-2415</p>
+					</div>
+				</div>
+				<!-- /contact -->
+
+				<!-- contact -->
+				<div class="col-sm-4">
+					<div class="contact">
+						<h3>Email</h3>
+						<a href="#">event@support.com</a>
+					</div>
+				</div>
+				<!-- /contact -->
+
+			</div>
+			<!-- /row -->
+		</div>
+		<!-- /container -->
+
+		
+	</div>
+	<!-- /Contact -->
+
+	<!-- Footer -->
+	<footer id="footer">
+		<!-- container -->
+		<div class="container">
+			<!-- row -->
+			<div class="row">
+
+				<!-- footer logo -->
+				<div class="col-md-4 col-md-push-4">
+					<div class="footer-brand">
+						<a class="logo" href="index.html">
+							<img class="logo-img" src="./img/logo.png" alt="logo">
+						</a>
+					</div>
+				</div>
+				<!-- /footer logo -->
+
+				<!-- contact social -->
+				<div class="col-md-4 col-md-push-4">
+					<div class="contact-social">
+						<a href="#"><i class="fa fa-facebook"></i></a>
+						<a href="#"><i class="fa fa-twitter"></i></a>
+						<a href="#"><i class="fa fa-google-plus"></i></a>
+						<a href="#"><i class="fa fa-instagram"></i></a>
+						<a href="#"><i class="fa fa-pinterest"></i></a>
+						<a href="#"><i class="fa fa fa-linkedin"></i></a>
+					</div>
+				</div>
+				<!-- /contact social -->
+
+				<!-- copyright -->
+				<div class="col-md-4 col-md-pull-8">
+					<span class="copyright"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></span>
+				</div>
+				<!-- /copyright -->
+
+			</div>
+			<!-- /row -->
+		</div>
+		<!-- /container -->
+	</footer>
+	<!-- /Footer -->
+
+	<!-- jQuery Plugins -->
+	<script src="{% static 'slaw/js/jquery.min.js' %}"></script>
+	<script src="{% static 'slaw/js/bootstrap.min.js' %}"></script>
+	<script src="{% static 'slaw/js/jquery.waypoints.min.js' %}"></script>
+	<script src="{% static 'slaw/js/owl.carousel.min.js' %}"></script>
+	<script src="{% static 'slaw/js/jquery.stellar.min.js' %}"></script>
+	<script src="{% static 'slaw/js/google-map.js' %}"></script>
+	<script src="{% static 'slaw/js/jquery.countTo.js' %}"></script>
+	<script src="{% static 'slaw/js/main.js' %}"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+
 </body>
+
 </html>

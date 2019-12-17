@@ -2,17 +2,66 @@
 {% block title %}SLAW{% endblock %}
 
 {% block content %}
-    <article>
-        <h2>Welcome to SLAW 0.1</h2>
+    <!-- Home -->
+	<div id="home">
+		<!-- background image -->
+		<div class="section-bg" style="background-image:url(static/slaw/img/background01.jpg)" data-stellar-background-ratio="0.5"></div>
+		<!-- /background image -->
 
-    </article>
+		<!-- home wrapper -->
+		<div class="home-wrapper">
+			<!-- container -->
+			<div class="container">
+				<!-- row -->
+				<div class="row">
+					<!-- home content -->
+					<div class="col-md-8 col-md-offset-2">
+						<div class="home-content">
+							<h1>SLAW 0.1</h1>
+						</div>
+					</div>
+					<!-- /home content -->
+				</div>
+				<!-- /row -->
+			</div>
+			<!-- /container -->
+		</div>
+		<!-- /home wrapper -->
+	</div>
+	<!-- /Home -->
 
-    <article>
-        <h3>Award Categories</h3>
-        {% for category in categories %}
-            <h4>{{category.get_Category_of_award_display}}</h4>
-            <p>{{category.award_details}}</p>
-        {% endfor %}
-    </article>
+    <!-- About -->
+	<div id="about" class="section">
+		<!-- container -->
+		<div class="container">
+			<!-- row -->
+			<div class="row">
+				<!-- section title -->
+				<div class="section-title">
+					<h3 class="title"><span>Award</span> <span style="color: #dd0a37;">Categories</span></h3>
+				</div>
+				<!-- /section title -->
+
+				<div class="col-md-8 col-md-offset-2 text-center">
+                    <!-- about content -->
+                    {% for category in categories %}
+                        <div class="about-content">
+                            <h4><span>{{category.get_Category_of_award_display}}</span></h4>
+                            <p style="text-align: justify;">{{category.award_details}}</p>
+                        </div>
+                    {% endfor %}
+					<!-- /about content -->
+
+					
+		
+						<!-- /row -->
+					
+				</div>
+			</div>
+			<!-- row -->
+		</div>
+		<!-- /container -->
+	</div>
+	<!-- /About -->
 
 {% endblock %}
