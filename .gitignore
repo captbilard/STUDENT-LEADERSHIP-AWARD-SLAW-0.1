@@ -99,6 +99,9 @@ venv.bak/
 .ropeproject
 
 # mkdocs documentation
+
+#template
+event/
 /site
 
 # mypy

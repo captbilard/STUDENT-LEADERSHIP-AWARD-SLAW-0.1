@@ -1,0 +1,46 @@
+{% extends "slaw/base.html" %}
+{% block title %}Login to SLAW{% endblock %}
+
+{% block content %}
+
+
+    <div id="page-wrapper" class="section">
+            <!-- container -->
+        <div class="container">
+                <!-- row -->
+            <div class="row">
+                    <!-- wrapper content -->
+                <div class="col-md-12">
+                    <div class="page-wrapper-content">
+                        <h1>Login to SLAW world</h1>
+                        </div>
+                </div>
+                    <!-- /wrapper content -->
+            </div>
+                <!-- /row -->
+        </div>
+            <!-- /container -->
+    </div>
+        <!-- /Page Header -->
+    
+        <div class="section">
+            <div class="container">
+                <div class="row">
+        
+                    {% if form.errors %}
+                        <p>Your username and password didn't match. Please try again.</p>
+                    {% endif %}
+                
+                    <form action="{% url 'login' %}" method="post">
+                        {% csrf_token %}
+                        {{form.username.label_tag}}
+                        {{form.username}}
+                        {{form.password.label_tag}}
+                        {{form.password}}
+                        <input type="submit" value="Login" class="btn btn-primary">
+                        <input type="hidden" name="next" value="{{next}}">
+                    </form>
+                </div>
+            </div>
+        </div>
+{% endblock %}

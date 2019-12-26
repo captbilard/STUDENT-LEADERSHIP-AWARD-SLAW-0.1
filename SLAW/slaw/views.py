@@ -1,10 +1,13 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse, HttpResponseRedirect
 from django.views import generic
+from django.contrib.auth import logout
 from .models import Nominees, Votes, awardCategories
+from django.contrib.auth.decorators import login_required
 from django.urls import reverse
 from .forms import NominateForm
-from rest_framework.decorators import api_view
+from django.contrib.auth.forms import UserCreationForm
+from .forms import SignUpForm
 
 
 categories = awardCategories.objects.all()
@@ -29,7 +32,7 @@ class VotingCategory(generic.ListView):
 def votingList(request, category_id):
     category = get_object_or_404(awardCategories, pk=category_id)
     return render(request, "slaw/voting-list.html", {'category':category})
-
+@login_required
 def vote(request, nominee_id):
     nominee = get_object_or_404(Nominees, pk=nominee_id)
     # print(nominee_id)
@@ -47,7 +50,7 @@ def vote(request, nominee_id):
         return HttpResponseRedirect(reverse('index'))
     
 
-
+@login_required
 def Nominate(request):
     if request.method == 'POST':
         nominate_form = NominateForm(request.POST)
@@ -55,7 +58,7 @@ def Nominate(request):
             nominate_form.save()
         newNomineeId = Nominees.objects.count()
         try:
-            newNominee = Nominees.objects.get(pk=newNomineeId)
+            newNominee = Nominees.objects.get(pk=newNomineeId+1)
         except (KeyError, Nominees.DoesNotExist):
             pass
         else:
@@ -67,6 +70,17 @@ def Nominate(request):
         return render(request, 'slaw/nominate.html', {'form':nominate_form})
 
     
+def register(request):
+    if request.method == 'POST':
+        form = SignUpForm(request.POST)
+        if form.is_valid():
+            form.save()
+        return redirect('login')
+    else:
+        form = SignUpForm()
+        return render(request, 'registration/register.html', {'form':form})
 
 
-
+def logout_view(request):
+    logout(request)
+    return redirect('index')
