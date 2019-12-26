@@ -12,7 +12,9 @@ urlpatterns = [
     path('vote-category/', views.VotingCategory.as_view(), name="voting-category"),
     path('vote-category/<int:category_id>/', views.votingList, name="voting-list"),
     path('<int:nominee_id>/vote/', views.vote, name="vote"),
-    path('nominate/', views.Nominate, name='nominate')
+    path('nominate/', views.Nominate, name='nominate'),
+    path('register/', views.register, name="register"),
+    path('logout/', views.logout_view, name="logout")
 
     
     

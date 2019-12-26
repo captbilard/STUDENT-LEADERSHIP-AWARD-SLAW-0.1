@@ -1,0 +1,49 @@
+{% extends "slaw/base.html" %}
+{% block title %}Join SLAW Family{% endblock %}
+
+{% block content %}
+    <!-- {% if form.errors %}
+        <p>There was an error in your form, kindly check that all required fields are filled correctly</p>
+    {% endif %} -->
+    <div id="page-wrapper" class="section">
+            <!-- container -->
+            <div class="container">
+                <!-- row -->
+                <div class="row">
+                    <!-- wrapper content -->
+                    <div class="col-md-12">
+                        <div class="page-wrapper-content">
+                            <h1>Join the SLAW family.</h1>
+                        </div>
+                    </div>
+                    <!-- /wrapper content -->
+                </div>
+                <!-- /row -->
+            </div>
+            <!-- /container -->
+        </div>
+        <!-- /Page Header -->
+    <div class="section">
+		<div class="container">
+			<div class="row">
+                <form action="{% url 'register' %}" method="post">
+                    {% csrf_token %}
+                    {% for field in form %}
+                        <p>
+                            {{field.label_tag}}
+                            {{field}}
+                            {% if field.help_text %}
+                                <small style="color: grey;">{{field.help_text}}</small>
+                            {% endif %}
+                            {% for error in field.errors %}
+                            <p style="color: red;">{{error}}</p>
+                            {% endfor %}
+                        </p>
+                    {% endfor %}
+                    <input type="submit" value="Sign Up" class="btn btn-primary">
+                </form>
+			</div>
+		</div>
+	</div>
+
+{% endblock %}

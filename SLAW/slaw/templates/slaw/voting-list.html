@@ -4,6 +4,7 @@
 {% block content %}
 <div class="main-voting-list-div">
     <h2>{{category.get_Category_of_award_display}}</h2>
+    
     <div class="row">
         {% for nominee in category.nominees_set.all %}
         <div class="col-sm-6 col-md-4">
