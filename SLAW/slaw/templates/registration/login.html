@@ -12,7 +12,7 @@
                     <!-- wrapper content -->
                 <div class="col-md-12">
                     <div class="page-wrapper-content">
-                        <h1>Login to SLAW world</h1>
+                        <h1>Login to SLAW</h1>
                         </div>
                 </div>
                     <!-- /wrapper content -->
@@ -25,21 +25,29 @@
     
         <div class="section">
             <div class="container">
-                <div class="row">
-        
-                    {% if form.errors %}
-                        <p>Your username and password didn't match. Please try again.</p>
-                    {% endif %}
                 
-                    <form action="{% url 'login' %}" method="post">
-                        {% csrf_token %}
-                        {{form.username.label_tag}}
-                        {{form.username}}
-                        {{form.password.label_tag}}
-                        {{form.password}}
-                        <input type="submit" value="Login" class="btn btn-primary">
-                        <input type="hidden" name="next" value="{{next}}">
-                    </form>
+                <div class="row">
+                    <div class="col-xs-7 col-sm-6 col-md-4">
+                        
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                {% if form.errors %}
+                                    <div class="alert alert-warning" role="alert">
+                                        <p>Your username and password didn't match. Please try again.</p>
+                                    </div>
+                                {% endif %}
+                                <div class="input-group">
+                                    <form action="{% url 'login' %}" method="post">
+                                        {%csrf_token %}
+                                        {{form.as_p}}
+                                        <input type="submit" value="Login" class="btn btn-primary" style="margin-top: 10px; margin-left: 30px;">
+                                        <input type="hidden" name="next" value="{{next}}">
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>

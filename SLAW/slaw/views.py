@@ -32,7 +32,9 @@ class VotingCategory(generic.ListView):
 def votingList(request, category_id):
     category = get_object_or_404(awardCategories, pk=category_id)
     return render(request, "slaw/voting-list.html", {'category':category})
-@login_required
+
+
+@login_required()
 def vote(request, nominee_id):
     nominee = get_object_or_404(Nominees, pk=nominee_id)
     # print(nominee_id)
@@ -50,7 +52,7 @@ def vote(request, nominee_id):
         return HttpResponseRedirect(reverse('index'))
     
 
-@login_required
+@login_required()
 def Nominate(request):
     if request.method == 'POST':
         nominate_form = NominateForm(request.POST)
