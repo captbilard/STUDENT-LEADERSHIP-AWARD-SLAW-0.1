@@ -26,22 +26,30 @@
     <div class="section">
 		<div class="container">
 			<div class="row">
-                <form action="{% url 'register' %}" method="post">
-                    {% csrf_token %}
-                    {% for field in form %}
-                        <p>
-                            {{field.label_tag}}
-                            {{field}}
-                            {% if field.help_text %}
-                                <small style="color: grey;">{{field.help_text}}</small>
-                            {% endif %}
-                            {% for error in field.errors %}
-                            <p style="color: red;">{{error}}</p>
-                            {% endfor %}
-                        </p>
-                    {% endfor %}
-                    <input type="submit" value="Sign Up" class="btn btn-primary">
-                </form>
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="input-group">
+                            <form action="{% url 'register' %}" method="post">
+                                {% csrf_token %}
+                                {% for field in form %}
+                                    <p>
+                                        {{field.label_tag}}
+                                        {{field}}
+                                        {% if field.help_text %}
+                                            <small style="color: grey;">{{field.help_text}}</small>
+                                        {% endif %}
+                                        {% for error in field.errors %}
+                                        <div class="alert alert-danger" role="alert">
+                                            <p style="color: red;">{{error}}</p>
+                                        </div>
+                                        {% endfor %}
+                                    </p>
+                                {% endfor %}
+                                <input type="submit" value="Sign Up" class="btn btn-primary">
+                            </form>
+                        </div>
+                    </div>
+                </div>
 			</div>
 		</div>
 	</div>

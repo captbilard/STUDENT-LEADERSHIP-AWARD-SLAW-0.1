@@ -14,7 +14,8 @@ urlpatterns = [
     path('<int:nominee_id>/vote/', views.vote, name="vote"),
     path('nominate/', views.Nominate, name='nominate'),
     path('register/', views.register, name="register"),
-    path('logout/', views.logout_view, name="logout")
+    path('logout/', views.logout_view, name="logout"),
+    
 
     
     

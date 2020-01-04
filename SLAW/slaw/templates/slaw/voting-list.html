@@ -7,16 +7,18 @@
     
     <div class="row">
         {% for nominee in category.nominees_set.all %}
-        <div class="col-sm-6 col-md-4">
-            <div class="thumbnail">
-                <!-- <img src="" alt=""> -->
-                <div class="caption" style="text-align: center;">
-                    <h3>{{nominee.Full_Name}}</h3>
-                    <p>{{nominee.Institution}}</p>
-                    <p><a href="{% url 'vote' nominee.id %}" class="btn btn-primary" role="button">Vote</a></p>
+            <div class="col-sm-6 col-md-4">
+                <div class="thumbnail">
+                    <!-- <img src="" alt=""> -->
+                    <div class="caption" style="text-align: center;">
+                        <h3>{{nominee.Full_Name}}</h3>
+                        <p>{{nominee.Institution}}</p>
+                        <p><a href="{% url 'vote' nominee.id %}" class="btn btn-primary" role="button">Vote</a></p>
+                    </div>
                 </div>
             </div>
-        </div>
+        {% empty %}
+            <p>No one has been nominated under this category. <span><a href="{% url 'nominate' %}">Click here</a></span> to nominate a student.</p>
         {% endfor %}
     </div>
 </div>
