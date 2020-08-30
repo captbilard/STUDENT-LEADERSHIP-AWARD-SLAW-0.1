@@ -1,0 +1,441 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="icon" href="img/favicon.png" type="image/png">
+        <title>Change360Network</title>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="{% static 'Change360Network/css/bootstrap.css' %}">
+        <link rel="stylesheet" href="{% static 'Change360Network/vendors/linericon/style.css' %}">
+        <link rel="stylesheet" href="{% static 'Change360Network/css/font-awesome.min.css' %}">
+        <link rel="stylesheet" href="{% static 'Change360Network/vendors/lightbox/simpleLightbox.css' %}">
+        <link rel="stylesheet" href="{% static 'Change360Network/vendors/nice-select/css/nice-select.css' %}">
+        <!-- main css -->
+        <link rel="stylesheet" href="{% static 'Change360Network/css/style.css' %}">
+        <link rel="stylesheet" href="{% static 'Change360Network/css/responsive.css' %}">
+    </head>
+<body>
+
+    	<!--================ Start Header Menu Area =================-->
+	<header class="header_area">
+		<div class="main_menu">
+			<div class="container">
+				<nav class="navbar navbar-expand-lg navbar-light">
+					<div class="container">
+						<!-- Brand and toggle get grouped for better mobile display -->
+						<!--<a class="navbar-brand logo_h" href="{% url 'index' %}"><img src="https://res.cloudinary.com/change360network/image/upload/v1592395913/Change360Network%20Background%20Image/logo_j6aj9h.jpg" alt="Change360Network"></a>-->
+						<!--<a class="navbar-brand logo_h" href="{% url 'index' %}"><span class="fa fa-home"></span></a>-->
+						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<!-- Collect the nav links, forms, and other content for toggling -->
+						<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+							<ul class="nav navbar-nav menu_nav ml-auto">
+								<li class="nav-item active"><a class="nav-link" href="{% url 'index' %}">Home</a></li>
+								<li class="nav-item"><a class="nav-link" href="#about_us">About</a></li>
+								<!--<li class="nav-item"><a class="nav-link" href="causes.html">Causes</a>-->
+								<!--<li class="nav-item submenu dropdown">-->
+								<!--	<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pages</a>-->
+								<!--	<ul class="dropdown-menu">-->
+								<!--		<li class="nav-item"><a class="nav-link" href="events.html">Events</a>-->
+								<!--		<li class="nav-item"><a class="nav-link" href="event-details.html">Event Details</a>-->
+								<!--		<li class="nav-item"><a class="nav-link" href="elements.html">Elements</a></li>-->
+								<!--	</ul>-->
+								<!--</li>-->
+								<!-- <li class="nav-item submenu dropdown">
+									<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Blog</a>
+									<ul class="dropdown-menu">
+										<li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
+										<li class="nav-item"><a class="nav-link" href="#">Blog Details</a></li>
+									</ul>
+								</li> -->
+								<li class="nav-item"><a class="nav-link" href="#contact-us">Contact</a></li>
+							</ul>
+						</div>
+					</div>
+				</nav>
+			</div>
+		</div>
+	</header>
+	<!--================ End Header Menu Area =================-->
+
+    <!--================ Home Banner Area =================-->
+    <section class="banner_area">
+        <div class="banner_inner d-flex align-items-center">
+            <div class="overlay bg-parallax" data-stellar-ratio="0.9" data-stellar-vertical-offset="0" data-background=""></div>
+            <div class="container">
+                <div class="banner_content text-center">
+                    <h2>About Us</h2>
+                    <!--<p>Platea nullam nostra laoreet potenti hendrerit laoreet enim nisl</p>-->
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--================ End Home Banner Area =================-->
+
+	<!--================ Start About Us Area =================-->
+	<section class="about_area section_gap" id="about_us">
+        <div class="container">
+            <div class="row">
+                <div class="single_about row">
+                    <!--<div class="col-lg-6 col-md-12 text-center about_left">-->
+                    <!--    <div class="about_thumb">-->
+                    <!--        <img src="https://res.cloudinary.com/change360network/image/upload/v1592150611/Change360Network%20Background%20Image/IMG-20200519-WA0005_xei402.jpg" class="img-fluid" alt="">-->
+                    <!--    </div>-->
+                    <!--</div>-->
+                    <div class="col-lg-12 col-md-12 about_right">
+                        <div class="about_content">
+                            <h2>About us</h2>
+
+
+
+                            <p>
+                                    Change360 Network (C360Network)is a non-profit organisation driven by a group of young progressive Nigerians with a strong excellence-oriented mindset and belief of a better Nigeria. Our mission is to help young Nigerians discover and develop their leadership potential through constant mentoring and leadership training with the aim to position them with the right platform to inculcate the good leadership spirit needed to move our nation forward.
+                            </p>
+                            <p>
+                                    Change360 Network came up in 2013 as a way of promoting good leadership in Nigerian universities and as a way of encouraging more young persons to take up leadership positions in order to produce leaders who are ready to take on roles and responsibilities needed to drive our nation in the right direction .
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--================ End About Us Area =================-->
+<!--================Team Area =================-->
+<!--	<section class="team_area section_gap">-->
+<!--		<div class="container">-->
+<!--			<div class="main_title">-->
+<!--				<h2>Meet our Team</h2>-->
+
+<!--			</div>-->
+<!--			<div class="row team_inner">-->
+<!--				<div class="col-lg-3 col-md-6">-->
+<!--					<div class="team_item">-->
+
+<!--						<div class="team_name">-->
+<!--							<h4>Abeeb Adebayo</h4>-->
+<!--							<p>Founder/Coordinator</p>-->
+<!--							<div class="social">-->
+<!--								<a href="#"><i class="fa fa-facebook"></i></a>-->
+<!--								<a href="#" class="active"><i class="fa fa-twitter"></i></a>-->
+<!--								<a href="#"><i class="fa fa-instagram"></i></a>-->
+<!--								<a href="mailto:abeeb.adebayo.olatunde@gmail.com"><i class="fa fa-envelope-o"></i></a>-->
+<!--							</div>-->
+<!--						</div>-->
+<!--					</div>-->
+<!--				</div>-->
+
+<!--				<div class="col-lg-3 col-md-6">-->
+<!--					<div class="team_item">-->
+
+<!--						<div class="team_name">-->
+<!--							<h4>Ayodeji Hughes</h4>-->
+<!--							<p>Co-Founder/ Executive Director</p>-->
+<!--							<div class="social">-->
+<!--								<a href="#"><i class="fa fa-facebook"></i></a>-->
+<!--								<a href="#"><i class="fa fa-twitter"></i></a>-->
+<!--								<a href="#"><i class="fa fa-instagram"></i></a>-->
+<!--								<a href="mailto:dejihughes@gmail.com"><i class="fa fa-envelope-o"></i></a>-->
+<!--							</div>-->
+<!--						</div>-->
+<!--					</div>-->
+<!--				</div>-->
+
+<!--				<div class="col-lg-3 col-md-6">-->
+<!--					<div class="team_item">-->
+
+<!--						<div class="team_name">-->
+<!--							<h4>Femi Milluher</h4>-->
+<!--							<p>Director, Programs</p>-->
+<!--							<div class="social">-->
+<!--								<a href="#"><i class="fa fa-facebook"></i></a>-->
+<!--								<a href="#" class="active"><i class="fa fa-twitter"></i></a>-->
+<!--								<a href="#"><i class="fa fa-instagram"></i></a>-->
+<!--								<a href="#"><i class="fa fa-envelope-o"></i></a>-->
+<!--							</div>-->
+<!--						</div>-->
+<!--					</div>-->
+<!--				</div>-->
+
+<!--				<div class="col-lg-3 col-md-6">-->
+<!--					<div class="team_item">-->
+
+<!--						<div class="team_name">-->
+<!--							<h4>Ademola Adebayo</h4>-->
+<!--							<p>Director, IT and Engineering</p>-->
+<!--							<div class="social">-->
+<!--								<a href="#"><i class="fa fa-facebook"></i></a>-->
+<!--								<a href="#" class="active"><i class="fa fa-twitter"></i></a>-->
+<!--								<a href="#"><i class="fa fa-instagram"></i></a>-->
+<!--								<a href="#"><i class="fa fa-envelope-o"></i></a>-->
+<!--							</div>-->
+<!--						</div>-->
+<!--					</div>-->
+<!--				</div>-->
+<!--			</div>-->
+
+<!--			<div class="row team_inner">-->
+<!--				<div class="col-lg-3 col-md-6">-->
+<!--					<div class="team_item">-->
+
+<!--						<div class="team_name">-->
+<!--							<h4>Juwon Bello</h4>-->
+<!--							<p>Team Lead, Media and Social engagement</p>-->
+<!--							<div class="social">-->
+<!--								<a href="#"><i class="fa fa-facebook"></i></a>-->
+<!--								<a href="#" class="active"><i class="fa fa-twitter"></i></a>-->
+<!--								<a href="#"><i class="fa fa-instagram"></i></a>-->
+<!--								<a href="#"><i class="fa fa-envelope-o"></i></a>-->
+<!--							</div>-->
+<!--						</div>-->
+<!--					</div>-->
+<!--				</div>-->
+<!--				<div class="col-lg-3 col-md-6">-->
+<!--					<div class="team_item">-->
+<!--						<-->
+<!--						<div class="team_name">-->
+<!--							<h4>Favour Ojo</h4>-->
+<!--							<p>Media and Social Engagement Officer</p>-->
+<!--							<div class="social">-->
+<!--								<a href="#"><i class="fa fa-facebook"></i></a>-->
+<!--								<a href="#" class="active"><i class="fa fa-twitter"></i></a>-->
+<!--								<a href="#"><i class="fa fa-instagram"></i></a>-->
+<!--								<a href="#"><i class="fa fa-envelope-o"></i></a>-->
+<!--							</div>-->
+<!--						</div>-->
+<!--					</div>-->
+<!--				</div>-->
+<!--				<div class="col-lg-3 col-md-6">-->
+<!--					<div class="team_item">-->
+
+<!--						<div class="team_name">-->
+<!--							<h4>Osinulu Adebayo</h4>-->
+<!--							<p>IT Officer</p>-->
+<!--							<div class="social">-->
+<!--								<a href="#"><i class="fa fa-facebook"></i></a>-->
+<!--								<a href="#" class="active"><i class="fa fa-twitter"></i></a>-->
+<!--								<a href="#"><i class="fa fa-instagram"></i></a>-->
+<!--								<a href="#"><i class="fa fa-envelope-o"></i></a>-->
+<!--							</div>-->
+<!--						</div>-->
+<!--					</div>-->
+<!--				</div>-->
+<!--				<div class="col-lg-3 col-md-6">-->
+<!--					<div class="team_item">-->
+
+<!--						<div class="team_name">-->
+<!--							<h4>Quadri Bello</h4>-->
+<!--							<p>Research/Programs Officer</p>-->
+<!--							<div class="social">-->
+<!--								<a href="#"><i class="fa fa-facebook"></i></a>-->
+<!--								<a href="#" class="active"><i class="fa fa-twitter"></i></a>-->
+<!--								<a href="#"><i class="fa fa-instagram"></i></a>-->
+<!--								<a href="#"><i class="fa fa-envelope-o"></i></a>-->
+<!--							</div>-->
+<!--						</div>-->
+<!--					</div>-->
+<!--				</div>-->
+<!--				<div class="col-lg-3 col-md-6">-->
+<!--					<div class="team_item">-->
+
+<!--						<div class="team_name">-->
+<!--							<h4>Gafar Lanre</h4>-->
+<!--							<p>Creativity Officer</p>-->
+<!--							<div class="social">-->
+<!--								<a href="#"><i class="fa fa-facebook"></i></a>-->
+<!--								<a href="#" class="active"><i class="fa fa-twitter"></i></a>-->
+<!--								<a href="#"><i class="fa fa-instagram"></i></a>-->
+<!--								<a href="#"><i class="fa fa-envelope-o"></i></a>-->
+<!--							</div>-->
+<!--						</div>-->
+<!--					</div>-->
+<!--				</div>-->
+<!--				<div class="col-lg-3 col-md-6">-->
+<!--					<div class="team_item">-->
+
+<!--						<div class="team_name">-->
+<!--							<h4>Collins Akaniru</h4>-->
+<!--							<p>Team Lead, Creativity and Digital Media</p>-->
+<!--							<div class="social">-->
+<!--								<a href="#"><i class="fa fa-facebook"></i></a>-->
+<!--								<a href="#" class="active"><i class="fa fa-twitter"></i></a>-->
+<!--								<a href="#"><i class="fa fa-instagram"></i></a>-->
+<!--								<a href="#"><i class="fa fa-envelope-o"></i></a>-->
+<!--							</div>-->
+<!--						</div>-->
+<!--					</div>-->
+<!--				</div>-->
+<!--			</div>-->
+<!--		</div>-->
+<!--	</section>-->
+
+	<!--================End Team Area =================-->
+	
+	<!--================ Start CTA Area =================-->
+	<div class="cta-area section_gap overlay">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-5">
+                    <h1>JOIN US </h1>
+                    <form class="subscribe_form relative" action="" method="post">
+                        {% csrf_token %}
+                        {% for field in form %}
+                            <div class="form-group row">
+                                {{ field.errors }}
+                                <label for="{{field.id_for_label}}" class="col-sm-5 col-form-label">{{field.label_tag}} </label>
+								<div class="col-sm-7">
+									{{ field }}
+								</div>
+                            </div>
+                        {% endfor %}
+                        <a href="{% url 'about-us' %}" class="primary_btn yellow_btn rounded">Become a Volunteer</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--================ End CTA Area =================-->
+
+	<!--================ Start footer Area  =================-->
+	<footer id="contact-us">
+		<div class="footer-area">
+			<div class="container">
+				<div class="row section_gap">
+					<div class="col-lg-3 col-md-6 col-sm-6">
+						<div class="single-footer-widget tp_widgets">
+							<h4 class="footer_title large_title">Our Vision</h4>
+							<p>
+								A nation where the ideas of our founding fathers are reinvigorated and
+achieved.
+							</p>
+							<p>
+								A nation where the youth are the touch bearers of change.
+							</p>
+							<p>
+								A nation where the voices of the youth be heard and their aspirations achieved.
+							</p>
+						</div>
+					</div>
+					<div class="offset-lg-1 col-lg-2 col-md-6 col-sm-6">
+						<div class="single-footer-widget tp_widgets">
+							<h4 class="footer_title">Quick Links</h4>
+							<ul class="list">
+								<li><a href="http://www.change360network.com/">Home</a></li>
+								<li><a href="#">About</a></li>
+								<li><a href="#">Causes</a></li>
+								<li><a href="#">Event</a></li>
+								<li><a href="#">News</a></li>
+								<li><a href="#">Contact</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-lg-2 col-md-6 col-sm-6">
+						<div class="single-footer-widget instafeed">
+							<h4 class="footer_title">Gallery</h6>
+							<ul class="list instafeed d-flex flex-wrap">
+								<li><img src="img/gallery/g1.jpg" alt=""></li>
+								<li><img src="img/gallery/g2.jpg" alt=""></li>
+								<li><img src="img/gallery/g3.jpg" alt=""></li>
+								<li><img src="img/gallery/g4.jpg" alt=""></li>
+								<li><img src="img/gallery/g5.jpg" alt=""></li>
+								<li><img src="img/gallery/g6.jpg" alt=""></li>
+							</ul>
+						</div>
+					</div>
+					<div class="offset-lg-1 col-lg-3 col-md-6 col-sm-6">
+						<div class="single-footer-widget tp_widgets">
+							<h4 class="footer_title">Contact Us</h4>
+							<div class="ml-40">
+								<!--<p class="sm-head">-->
+								<!--	<span class="fa fa-location-arrow"></span>-->
+								<!--	Head Office-->
+								<!--</p>-->
+								<!--<p>123, Main Street, Your City</p>-->
+
+								<p class="sm-head">
+									<span class="fa fa-phone"></span>
+									Phone Number
+								</p>
+								<p>
+									+234 811 888 1685 <br>
+
+								</p>
+
+								<p class="sm-head">
+									<span class="fa fa-envelope"></span>
+									Email
+								</p>
+								<p>
+									C360Network@gmail.com <br>
+
+								</p>
+								<p class="sm-head">
+									<span class="fa fa-instagram"></span>
+									Instagram
+								</p>
+								<p>
+									<a href="https://www.instagram.com/c360network/">@c360network</a> <br>
+
+								</p>
+								<p class="sm-head">
+									<span class="fa fa-twitter"></span>
+									Twitter
+								</p>
+								<p>
+									<a href="https://twitter.com/C360Network">@c360network</a> <br>
+
+								</p>
+								<p class="sm-head">
+									<span class="fa-facebook-official"></span>
+									Facebook
+								</p>
+								<p>
+									<a href="https://m.facebook.com/pg/Change360Network/about/">@Change360Network</a> <br>
+
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="footer-bottom">
+			<div class="container">
+				<div class="row d-flex">
+					<p class="col-lg-12 footer-text text-center">
+						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!--================ End footer Area  =================-->
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="js/jquery-3.2.1.min.js"></script>
+        <script src="js/popper.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/stellar.js"></script>
+        <script src="vendors/lightbox/simpleLightbox.min.js"></script>
+        <script src="vendors/nice-select/js/jquery.nice-select.min.js"></script>
+        <script src="js/jquery.ajaxchimp.min.js"></script>
+        <script src="js/mail-script.js"></script>
+        <!-- contact js -->
+        <script src="js/jquery.form.js"></script>
+        <script src="js/jquery.validate.min.js"></script>
+        <script src="js/contact.js"></script>
+        <!--gmaps Js-->
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
+        <script src="js/gmaps.min.js"></script>
+        <script src="js/theme.js"></script>
+    </body>
+</html>
