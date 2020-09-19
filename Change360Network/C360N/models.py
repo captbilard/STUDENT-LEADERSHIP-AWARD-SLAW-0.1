@@ -1,5 +1,8 @@
 from django.db import models
 
+# Third party installation
+from django_countries.fields import CountryField
+
 # Create your models here.
 class Volunteers(models.Model):
     YES='YES'
@@ -10,8 +13,8 @@ class Volunteers(models.Model):
     ]
     Full_Name = models.CharField(max_length=50)
     Email_Address = models.EmailField()
-    Phone_Number = models.CharField(max_length=15)
-    Country = models.CharField(max_length=60)
+    Phone_Number = models.IntegerField()
+    Country = CountryField()
     State = models.CharField(max_length=50)
     University = models.CharField(max_length=100)
     Previous_volunteering_experience = models.CharField(max_length=3, choices=YES_NO_BUTTON_QUESTIONS, default=YES)
