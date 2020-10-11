@@ -1,7 +1,14 @@
-from django.urls import path
+from django.urls import path, include
 
-from . import views
+from rest_framework.routers import DefaultRouter
+
+from .views import NomineesListView, VoteView, UserViewSet
+
+router = DefaultRouter()
+router.register('nominees', NomineesListView, basename='nominees')
+router.register('user', UserViewSet, basename='user')
 
 urlpatterns = [
-    path('', views.index),
+    path('', include(router.urls)),
+    path('vote/<int:nominee_id>/', VoteView.as_view())
 ]
