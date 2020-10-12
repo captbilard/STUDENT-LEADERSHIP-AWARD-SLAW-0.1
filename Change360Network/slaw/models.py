@@ -1,6 +1,6 @@
 from django.db import models
 
-# Create your models here.
+
 class AwardCategories(models.Model):
     Campus_life_and_leadership_award = 'CLLA'
     Most_outstanding_student_union_leader_award = 'MOSULA'
@@ -42,7 +42,7 @@ class AwardCategories(models.Model):
     def __str__(self):
         # readeable_name = self.get
         return f'{self.Award_Category}'
-    
+
 
 class Nominees(models.Model):
     year_in_school = [
@@ -57,21 +57,19 @@ class Nominees(models.Model):
     award_category = models.ForeignKey(AwardCategories, on_delete=models.CASCADE)
     full_name = models.CharField(max_length=100)
     course_of_study = models.CharField(max_length=200)
-    level = models.IntegerField(choices= year_in_school, default='100L')
+    level = models.IntegerField(choices=year_in_school, default='100L')
     institution = models.CharField(max_length=200)
     reason_for_nomination = models.TextField()
     cumulative_grade_point = models.FloatField(max_length=4, null=True, blank=True)
-    is_approved= models.BooleanField(default=False)
+    is_approved = models.BooleanField(default=False)
     votes = models.IntegerField(default=0)
     date_created = models.DateField(auto_now_add=True)
-
 
     class Meta:
         verbose_name_plural = "nominees"
 
     def __str__(self):
         return f'{self.full_name}'
-    
+
     def get_total_vote(self):
         return self.votes
-

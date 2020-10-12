@@ -21,10 +21,7 @@ class UserSerializers(serializers.ModelSerializer):
             'is_active',
             'user_permissions'
         ]
-    
+
     def create(self, validated_data):
         user = User.objects.create_user(**validated_data)
         return user
-
-
-        

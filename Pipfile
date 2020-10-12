@@ -9,6 +9,9 @@ verify_ssl = true
 django = "*"
 flake8 = "*"
 django-countries = "*"
+djangorestframework = "*"
+django-filter = "*"
+drf-yasg2 = "*"
 
 [requires]
 python_version = "3.7"

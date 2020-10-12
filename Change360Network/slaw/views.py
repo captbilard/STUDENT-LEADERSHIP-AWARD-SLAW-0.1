@@ -6,7 +6,6 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.permissions import IsAuthenticated, IsAuthenticatedOrReadOnly, IsAdminUser
-from rest_framework.decorators import permission_classes
 
 from .models import Nominees
 from .serializers import NomineeSerializers, UserSerializers
@@ -23,9 +22,10 @@ class NomineesListView(viewsets.ModelViewSet):
     ]
     permission_classes = [IsAuthenticatedOrReadOnly]
 
+
 class VoteView(APIView):
     permission_classes = [IsAuthenticatedOrReadOnly]
-    
+
     def get(self, request, nominee_id):
         nominee = get_object_or_404(Nominees, pk=nominee_id)
         nominee_data = {
@@ -33,12 +33,12 @@ class VoteView(APIView):
             "Total Votes": nominee.votes
         }
         return Response(data=nominee_data, status=status.HTTP_200_OK)
-    
+
     def post(self, request, nominee_id):
         nominee = get_object_or_404(Nominees, pk=nominee_id)
         nominee.votes = nominee.votes + 1
         nominee.save()
-        return Response({'result':"Vote has been casted successfully"})
+        return Response({'result': "Vote has been casted successfully"})
 
 
 class UserViewSet(viewsets.ModelViewSet):
