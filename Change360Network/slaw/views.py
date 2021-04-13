@@ -7,8 +7,8 @@ from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.permissions import IsAuthenticated, IsAuthenticatedOrReadOnly, IsAdminUser
 
-from .models import Nominees
-from .serializers import NomineeSerializers, UserSerializers
+from .models import Nominees, AwardCategories
+from .serializers import NomineeSerializers, UserSerializers, AwardCategoriesSerializers
 
 
 class NomineesListView(viewsets.ModelViewSet):
@@ -44,3 +44,13 @@ class VoteView(APIView):
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializers
+
+
+class AwardCategoryViewSet(viewsets.ModelViewSet):
+    queryset = AwardCategories.objects.all()
+    serializer_class = AwardCategoriesSerializers
+
+# def get_nominees_from_category(request, award_category_pk):
+#     nominees = Nominees.objects.filter(
+#         award_category=award_category_pk
+#     )

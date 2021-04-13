@@ -45,15 +45,18 @@ INSTALLED_APPS = [
     'C360N',
     'slaw',
     'events',
+    'blog'
     
     #Third-party apps
     'django_countries',
     'rest_framework',
     'django_filters',
-    'drf_yasg2'
+    'drf_yasg2',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -163,3 +166,6 @@ SWAGGER_SETTINGS = {
     'USE_SESSION_AUTH': True,
     'JSON_EDITOR': True,
 }
+
+# Corsheaders
+CORS_ORIGIN_ALLOW_ALL = True

@@ -1,3 +1,4 @@
+from django import urls
 from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls import url
@@ -21,8 +22,16 @@ schema_view = get_schema_view(
 )
 
 urlpatterns = [
+   # Index
     path('', include('C360N.urls')),
+
+   # Blog
+    path('blog/', include('blog.urls')),
+
+    #SLAW API
     path('slaw/api/', include('slaw.urls')),
+
+    #Admin and authentication
     path('admin/', admin.site.urls),
     path('accounts/', include('django.contrib.auth.urls')),
 
