@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     'C360N',
     'slaw',
     'events',
-    'blog'
+    'blog',
     
     #Third-party apps
     'django_countries',
@@ -53,6 +53,8 @@ INSTALLED_APPS = [
     'django_filters',
     'drf_yasg2',
     'corsheaders',
+    'crispy_forms',
+    'ckeditor',
 ]
 
 MIDDLEWARE = [
@@ -138,6 +140,9 @@ STATIC_URL = '/static/'
 
 STATIC_ROOT = BASE_DIR / 'static'
 
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
+
 MESSAGE_TAGS = {
         messages.DEBUG: 'alert-secondary',
         messages.INFO: 'alert-info',
@@ -169,3 +174,6 @@ SWAGGER_SETTINGS = {
 
 # Corsheaders
 CORS_ORIGIN_ALLOW_ALL = True
+
+# Django Crispy Form Template Pack
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
